@@ -1,0 +1,54 @@
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\MvcApplication1.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\MvcApplication1.pdb
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Net.Http.Formatting.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Http.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Http.WebHost.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.WebPages.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\Newtonsoft.Json.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Net.Http.Formatting.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Http.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Http.WebHost.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.WebPages.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\obj\Debug\MvcApplication1.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload\MvcApplication1\obj\Debug\MvcApplication1.pdb
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\MvcApplication1.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\MvcApplication1.pdb
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Net.Http.Formatting.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Http.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Http.WebHost.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.WebPages.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\Newtonsoft.Json.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Net.Http.Formatting.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Http.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Http.WebHost.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.WebPages.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\obj\Debug\MvcApplication1.dll
+C:\Users\USER\Desktop\HTML5DragFileUpload - Bootstrap\MvcApplication1\obj\Debug\MvcApplication1.pdb

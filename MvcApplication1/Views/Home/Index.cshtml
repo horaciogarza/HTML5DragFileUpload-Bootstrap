@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- http://xyz.cinc.biz/2013/03/html5.html -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML5,ASP.Net 4.5,drap & drop,file upload" />
+    <title>HTML5 Drap & Drop Multi-file Upload</title>
+    <style>
+        #dropDIV {
+            text-align: center; 
+            width: 300px;
+            height: 200px;        
+            margin: auto;
+            border: dashed 4px gray;     
+            display: table; 
+            overflow: hidden;    
+        }
+        #dropText {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #progress_container1 {
+            text-align: center; 
+            padding-top: 3px; 
+            visibility:hidden;
+        }
+        #progress_container2 {
+            margin: 0 auto; 
+            width: 300px; 
+            height: auto;
+        }
+        img {
+            max-height:200px; 
+            max-width:300px;
+        }
+        .underscore {
+            text-decoration:underline;
+        }
+    </style>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootplus.min.css" rel="stylesheet" />
+    <link href="~/Content/bootplus-responsive.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script> 
+        String.prototype.repeat = function (times) {
+            return (new Array(times + 1)).join(this);
+        };
+
+        function setProgressBar(percent) {
+            if ($('#progress_container1').css('visibility') == 'hidden' && percent > 0)
+                $('#progress_container1').css('visibility', 'visible');
+            
+            $('#progress_bar').html(percent + '%');
+            $('#progress_bar').attr('aria-valuenow', percent);
+            $('#progress_bar').css('width', percent + '%');
+
+            if (percent == 100) {
+                $('#progress_bar').addClass('progress-bar-success');                
+                $('#progress_bar').append(', Upload Complete');
+            }
+        }
+
+        function cardFormat(fn, size, type, img) {
+            var card_format_str = '<div class="col-md-4 card">\n' + ' '.repeat(4);
+            card_format_str += '<h3 class="card-heading simple"><span class="glyphicon glyphicon-file"></span>' + fn + '</h3>\n' + ' '.repeat(4);
+            card_format_str += '<div class="card-body">\n' + ' '.repeat(8);
+            card_format_str += '<span class="glyphicon glyphicon-info-sign"></span> Size: ' + size + ' KB<br />\n' + ' '.repeat(8);
+            card_format_str += '<span class="glyphicon glyphicon-tag"></span> Type: ' + type;
+            if (img != '') {
+                card_format_str += '<br />\n' + ' '.repeat(8) + '<span class="glyphicon glyphicon-picture"></span> Image: <br />\n' + ' '.repeat(8);
+                card_format_str += '<div style="text-align:center;"><img src="' + img + '" alt="' + fn + '" /></div><br />';
+            }
+            else
+                card_format_str += '<br /><br />';
+            return card_format_str;
+        }        
+
+        function dragoverHandler(evt) {
+            evt.preventDefault();
+        }
+        function dropHandler(evt) {//evt is DragEvent object
+            evt.preventDefault();
+            //initial
+            $('#progress_bar').removeClass('progress-bar-success');
+            $('div.container > div.row:nth-child(2)').children().remove();
+            $('#up_progress').html('');
+
+            var the_evt = evt;
+            var files = evt.dataTransfer.files; //get file objects
+
+            var fd = new FormData();
+            var xhr = new XMLHttpRequest();
+            var up_progress = document.getElementById('up_progress');
+
+            xhr.open('POST', '/Home/Upload', true); //start uploading
+            xhr.onload = function () {
+                //upload Complete
+                var result = JSON.parse(xhr.responseText);
+                if (result.code == '0') { //upload success
+                    if (result.msg != '') {
+                        var info = '<p>' + result.msg.replace(/\|/g, '<br />').replace(/\[/g, '<span class="underscore">').replace(/\]/g, '</span>') + '</p>';
+                        up_progress.innerHTML = '<p>' + info + '</p>';
+                    }
+                    setProgressBar(100);
+                }
+                else { //upload failed
+                    $('#progress_container1').css('visibility', 'hidden');
+                    var info = result.msg.replace(/\|/g, '<br />').replace(/\[/g, '<span class="underscore">').replace(/\]/g, '</span>');
+                    up_progress.innerHTML = '<p>Upload Failed! Message: ' + info + '</p>';
+                }
+            };
+            xhr.onerror = function () {
+                //upload failed
+                $('#progress_container1').css('visibility', 'hidden');
+                up_progress.innerHTML = '<p>Upload Failed! Code: ' + xhr.status + ', Message: ' + xhr.responseText + '</p>';
+            };
+            xhr.upload.onprogress = function (evt) {
+                //upload progress
+                if (evt.lengthComputable) {
+                    var complete = (evt.loaded / evt.total * 100 | 0);
+                    if (100 == complete) {
+                        complete = 99.9;
+                    }
+                    setProgressBar(complete);
+                }
+            };
+            
+            //check file size
+            for (var i = 0; i < files.length; i++) {
+                if (files[i].size > parseInt($('#maxUpSize').val()) * 1024) {
+                    up_progress.innerHTML = '<p>Upload Failed! Message: File Size Limit Exceeded ' + $('#maxUpSize').val() + ' KB: <span class="underscore">' + files[i].name + '</span></p>';
+                    return false;
+                }
+            }
+
+            for (var i = 0; i < files.length; i++) {
+                if (files[i].type.indexOf("image") > -1) {
+                    //preview images
+                    var fr = new FileReader();
+                    fr.onload = function (fn, size, type) {
+                        return function (evt) {
+                            var img = evt.target.result;
+                            $('div.container > div.row:nth-child(2)').append(cardFormat(fn, size, type, img));
+                        };
+                    }(files[i].name, Math.floor(files[i].size / 102.4) / 10, files[i].type);
+                    fr.readAsDataURL(files[i]);
+                }
+                else
+                    $('div.container > div.row:nth-child(2)').append(cardFormat(files[i].name, Math.floor(files[i].size / 102.4) / 10, files[i].type, ''));
+
+                //add uploading files to the array "ff"
+                fd.append('ff[]', files[i]);
+            }
+
+            xhr.send(fd); //begin uploading
+        }
+    </script>
+</head>
+<body>
+    <input type="hidden" id="maxUpSize" value="@ViewBag.MaxUploadSize" /> <!-- single file size limit in KB -->
+    <div class="container">
+        <div class="jumbotron">
+            <h3>HTML5 Drap & Drop Multi-file Upload</h3> 
+            <p>
+                <ul>
+                    <li>ASP.Net 4.5</li>
+                    <li>Progress Bar</li>
+                    <li>Automatic Upload & Rename</li>
+                    <li>Single File Size Limit</li>
+                </ul>
+            </p> 
+        </div>
+    </div>
+    <div id="dropDIV" ondragover="dragoverHandler(event)" ondrop="dropHandler(event)">
+        <div id="dropText">Drop Files Here</div>        
+    </div>
+    <div id="progress_container1">
+        <div id="progress_container2" class="progress">
+            <div id="progress_bar" class="progress-bar progress-bar-striped active" role="progressbar"
+                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div id="up_progress" class="well" style="text-align: center;"></div>    
+        </div>
+        <div class="row">
+        </div>
+    </div>
+</body>
+</html>
